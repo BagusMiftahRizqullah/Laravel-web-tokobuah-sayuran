@@ -13,11 +13,11 @@
                     <div id="subPages" class="collapse ">
                         <ul class="nav">
                             <li><a href="/pagehome" class="active">Home</a></li>
-                            <li><a href="page-login.html" class="">Login</a></li>
-                            <li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
+                            <li><a href="/pageabout" class="">About</a></li>
                         </ul>
                     </div>
                 </li>
+                <li><a href="adminconfig" class=""><i class="lnr lnr-cog"></i> <span>Admin Konfigurasi</span></a></li>
             </ul>
         </nav>
     </div>
@@ -100,7 +100,7 @@
                                     <div class="col-sm-6">
                                       <div class="card">
                                         <div class="card-body">
-                                          <h2 class="card-title">Home Promo</h2>
+                                          <h2 class="card-title">HomePromo</h2>
                                             <div class="container-login100-form-btn m-t-17">
                                                 <a href="/homepromo" class="btn btn-primary">Edit</a>
                                             </div>

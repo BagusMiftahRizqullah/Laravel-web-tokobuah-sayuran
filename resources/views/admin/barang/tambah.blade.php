@@ -1,6 +1,7 @@
 @extends('admin.layoutA')
 @section('title', 'Tambah Barang') 
 @section('leftbar')
+
 <!-- LEFT SIDEBAR -->
 <div id="sidebar-nav" class="sidebar">
     <div class="sidebar-scroll">
@@ -13,16 +14,18 @@
                     <div id="subPages" class="collapse ">
                         <ul class="nav">
                             <li><a href="/pagehome" class="">Home</a></li>
-                         
+                            <li><a href="/pageabout" class="">About</a></li>
+                       
                         </ul>
                     </div>
                 </li>
+                <li><a href="adminconfig" class=""><i class="lnr lnr-cog"></i> <span>Admin Konfigurasi</span></a></li>
             </ul>
         </nav>
     </div>
 </div>
+<!-- END LEFT SIDEBAR -->
 @endsection
-
 @section('konten')
 <div class="main">
     <!-- MAIN CONTENT -->

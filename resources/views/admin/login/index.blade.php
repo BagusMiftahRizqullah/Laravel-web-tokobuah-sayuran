@@ -15,18 +15,20 @@
 
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" @error('email') is-invalid @enderror type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
+						@error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100"  @error('password') is-invalid @enderror type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
+						@error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
 					</div>
 					
 					<div class="flex-sb-m w-full p-t-3 p-b-24">
-						<div class="contact100-form-checkbox">
+						{{-- <div class="contact100-form-checkbox">
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 							<label class="label-checkbox100" for="ckb1">
 								Remember me
@@ -37,20 +39,20 @@
 							<a href="#" class="txt1">
 								Forgot?
 							</a>
-						</div>
+						</div> --}}
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" >
 							Login
 						</button>
-                    </div>
-                    
-                    <div class="container-login100-form-btn m-t-17">
-                        <p class="demo-button">
-                            <a class="btn btn-warning" href="admin-register" role="button">REGISTER</a>
-                        </p>
-                    </div>
+						@if (Session::has('message'))
+                    	<p class="alert alert-danger">{{ Session::get('message') }}</p>
+						@endif
+					</div>
+
+					
+				
 
 				</form>
 			</div>

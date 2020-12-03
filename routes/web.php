@@ -23,8 +23,7 @@ Route::get('/shopdetail', 'App\Http\Controllers\ShopdetailController@index'); //
 
 //ADMIN
 
-Route::get('/admin-register', 'App\Http\Controllers\AuthController@getRegister')->name('registeradmin')->middleware('guest'); //register 
-Route::post('/admin-register', 'App\Http\Controllers\AuthController@postRegister')->middleware('guest');
+
 Route::get('/admin-login', 'App\Http\Controllers\AuthController@getLogin')->middleware('guest')->name('loginadmin');//login 
 Route::post('/admin-login', 'App\Http\Controllers\AuthController@postLogin')->middleware('guest'); 
 Route::get('/admin-logout', 'App\Http\Controllers\AuthController@logout')->middleware('auth')->name('logoutadmin'); //register  
@@ -65,3 +64,16 @@ Route::post('/homepromo/tambah', 'App\Http\Controllers\HomepromoController@store
 Route::get('/homepromo/hapus/{id}', 'App\Http\Controllers\HomepromoController@hapus')->middleware('auth');  //hapus
 Route::get('/homepromo/edit/{id}', 'App\Http\Controllers\HomepromoController@edit')->middleware('auth');  //edit
 Route::put('/homepromo/update/{id}', 'App\Http\Controllers\HomepromoController@update')->middleware('auth');  //UPDATE
+
+//Admin Page Atur About
+Route::get('/pageabout', 'App\Http\Controllers\PageaboutController@index')->middleware('auth'); //Halaman page About Admin
+Route::get('/pageabout/edit/{id}', 'App\Http\Controllers\PageaboutController@edit')->middleware('auth');  //Halaman Edit About Admin
+Route::put('/pageabout/update/{id}', 'App\Http\Controllers\PageaboutController@update')->middleware('auth');  //Page about admin UPDATE
+
+//Pengarturan Akun Admin
+Route::get('/adminconfig', 'App\Http\Controllers\AdminconfigController@index')->middleware('auth')->name('adminconfig');//Halaman Pengaturang Admin
+Route::get('/adminconfig/edit/{id}', 'App\Http\Controllers\AdminconfigController@edit')->middleware('auth');  //edit
+Route::put('/adminconfig/update/{id}', 'App\Http\Controllers\AdminconfigController@update')->middleware('auth');  //UPDATE
+Route::get('/adminconfig/tambah', 'App\Http\Controllers\AdminconfigController@getRegister')->middleware('auth'); //register 
+Route::post('/adminconfig/tambah', 'App\Http\Controllers\AdminconfigController@postRegister')->middleware('auth');
+Route::get('/adminconfig/hapus/{id}', 'App\Http\Controllers\AdminconfigController@hapus')->middleware('auth');  //hapus

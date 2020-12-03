@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\admin;
-
+use Session;
 
 class AuthController extends Controller
 {
@@ -16,6 +16,7 @@ class AuthController extends Controller
     public function postLogin(Request $request)
     {
         if (!\Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            Session::flash('message', "Email atau Password salah");
             return redirect ()->back();
 
         }

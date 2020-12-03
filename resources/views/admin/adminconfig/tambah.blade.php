@@ -1,6 +1,8 @@
 @extends('admin.layoutA')
-@section('title', 'Tambah Promo') 
+@section('title', 'Konfigurasi Admin') 
+@section('konten')
 @section('leftbar')
+
 <!-- LEFT SIDEBAR -->
 <div id="sidebar-nav" class="sidebar">
     <div class="sidebar-scroll">
@@ -14,16 +16,16 @@
                         <ul class="nav">
                             <li><a href="/pagehome" class="">Home</a></li>
                             <li><a href="/pageabout" class="">About</a></li>
-                            
+                       
                         </ul>
                     </div>
                 </li>
-                <li><a href="adminconfig" class=""><i class="lnr lnr-cog"></i> <span>Admin Konfigurasi</span></a></li>
+                <li><a href="/adminconfig" class="active"><i class="lnr lnr-cog"></i> <span>Admin Konfigurasi</span></a></li>
             </ul>
         </nav>
     </div>
 </div>
-<!-- END LEFT SIDEBAR -->
+<!-- END LEFT SIDEBAR --> 
 @endsection
 
 @section('konten')
@@ -33,38 +35,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-8">
-                <h1 class="mt-3">Tambah Data Promo</h1>
+                <h1 class="mt-3">Tambah Data Admin</h1>
             
-                <form method="POST" action="/homepromo/tambah" enctype="multipart/form-data">
+                <form method="POST" action="/adminconfig/tambah" enctype="form-data">
                                 @csrf
+                                <div class="form-group">
+                                    <label for="name">Nama</label>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="input Nama Admin" name="name">
+                                    @error('name')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                </div>
                                     
                                 <div class="form-group">
-                                    <label for="nama">Nama Barang</label>
-                                    <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" placeholder="input Nama Barang" name="nama">
-                                    @error('nama')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label for="email">E-Mail</label>
+                                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="input Email Admin" name="email">
+                                    @error('email')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Kategori</label>
-                                    <select class="form-control" name="kategori">
-                                    <option value="">Pilih </option>
-                                        <option value="col-lg-3 col-md-6 special-grid best-seller">Best Seller</option>
-                                        <option value="col-lg-3 col-md-6 special-grid top-featured">Top Featured</option>
-                                    </select>
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="input Password Admin" name="password">
+                                    @error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="password_confirmation">Password Komfirmasi</label>
+                                    <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" placeholder="Input Ulang Password" name="password_confirmation">
+                                    @error('password_confirmation')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                </div>
 
-                                <div class="form-group">
-                                    <label for="harga">Harga Barang</label>
-                                    <input type="number" class="form-control @error('harga') is-invalid @enderror" id="harga" placeholder="input Harga" name="harga">
-                                    @error('harga')<div class="invalid-feedback">{{ $message }}</div>@enderror
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="gambar">Gambar Barang</label>
-                                    <input type="file" class="form-control-file" id="gambar" name="gambar">
-                                </div>
-                            
 
                                 <p>
                                 <button type="submit" class="btn btn-primary">Tambah Data</button>

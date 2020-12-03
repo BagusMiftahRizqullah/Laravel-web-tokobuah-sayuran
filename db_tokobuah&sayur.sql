@@ -34,45 +34,6 @@ CREATE TABLE `failed_jobs` (
 
 /*Data for the table `failed_jobs` */
 
-/*Table structure for table `homeimgs` */
-
-DROP TABLE IF EXISTS `homeimgs`;
-
-CREATE TABLE `homeimgs` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `homeimgs` */
-
-/*Table structure for table `layouts` */
-
-DROP TABLE IF EXISTS `layouts`;
-
-CREATE TABLE `layouts` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `layouts` */
-
-/*Table structure for table `logos` */
-
-DROP TABLE IF EXISTS `logos`;
-
-CREATE TABLE `logos` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `logos` */
-
 /*Table structure for table `migrations` */
 
 DROP TABLE IF EXISTS `migrations`;
@@ -88,19 +49,6 @@ CREATE TABLE `migrations` (
 
 insert  into `migrations`(`id`,`migration`,`batch`) values (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2020_11_23_064220_create_barangs_table',1),(5,'2020_11_24_015248_create_homes_table',1),(6,'2020_11_24_081753_create_logins_table',2),(7,'2020_11_26_011413_create_pagehomes_table',3),(8,'2020_11_26_021633_create_logos_table',3),(9,'2020_11_26_053311_create_layouts_table',3),(10,'2020_11_26_060833_create_sliders_table',3),(11,'2020_11_26_064534_create_sliderhomes_table',3),(12,'2020_11_26_123823_create_homeimgs_table',3);
 
-/*Table structure for table `pagehomes` */
-
-DROP TABLE IF EXISTS `pagehomes`;
-
-CREATE TABLE `pagehomes` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `pagehomes` */
-
 /*Table structure for table `password_resets` */
 
 DROP TABLE IF EXISTS `password_resets`;
@@ -113,32 +61,6 @@ CREATE TABLE `password_resets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `password_resets` */
-
-/*Table structure for table `sliderhomes` */
-
-DROP TABLE IF EXISTS `sliderhomes`;
-
-CREATE TABLE `sliderhomes` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `sliderhomes` */
-
-/*Table structure for table `sliders` */
-
-DROP TABLE IF EXISTS `sliders`;
-
-CREATE TABLE `sliders` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `sliders` */
 
 /*Table structure for table `tb_admin` */
 
@@ -153,11 +75,11 @@ CREATE TABLE `tb_admin` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `tb_admin` */
 
-insert  into `tb_admin`(`id`,`name`,`email`,`password`,`created_at`,`updated_at`) values (8,'admin1','admin1@gmail.com','$2y$10$8hn1HvjxSIBQnKuT/Itu5.Rv69inXf.UnwyE472JkvMjvR2USp/YO','2020-11-25 12:13:07','2020-11-25 12:13:07'),(9,'admin4','admin4@gmail.com','$2y$10$CQP9KRnFNvUGWnj3edWNwOXXIG6RrZhpZqMi9gFARvq5vlOjIVldy','2020-11-25 12:21:25','2020-11-25 12:21:25'),(10,'miftah','miftah@gmail.com','$2y$10$Y3W9Avzge5B/VsbaIzNiFurvyF5YXlIsRXqAoPFtP8W5iWk5iPjQK','2020-11-25 12:51:47','2020-11-25 12:51:47');
+insert  into `tb_admin`(`id`,`name`,`email`,`password`,`created_at`,`updated_at`) values (8,'admin1','admin1@gmail.com','$2y$10$8hn1HvjxSIBQnKuT/Itu5.Rv69inXf.UnwyE472JkvMjvR2USp/YO','2020-11-25 12:13:07','2020-11-25 12:13:07'),(10,'miftah','miftah@gmail.com','$2y$10$Y3W9Avzge5B/VsbaIzNiFurvyF5YXlIsRXqAoPFtP8W5iWk5iPjQK','2020-11-25 12:51:47','2020-11-25 12:51:47'),(11,'admin2','admin2@gmail.com','$2y$10$K3.tdYvA81LO5sjyoSVC/ejKZUSBgOsWX.9CSTUSeLeje0m7eLDhS','2020-12-03 03:10:28','2020-12-03 03:10:28'),(12,'admin7','admin7@gmail.com','$2y$10$FFbTBG1c.BKpwe0U956qE.JoHV/aBm34AJVxfhuB8TLDLIaJBINiO','2020-12-03 03:13:32','2020-12-03 03:56:04');
 
 /*Table structure for table `tb_barang` */
 
@@ -209,7 +131,7 @@ CREATE TABLE `tb_homepromo` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tb_homepromo` */
 
@@ -231,6 +153,30 @@ CREATE TABLE `tb_logoweb` (
 /*Data for the table `tb_logoweb` */
 
 insert  into `tb_logoweb`(`id`,`nama`,`gambar`,`updated_at`,`created_at`) values (1,'FreshShop-logo','logo.png','2020-11-27 03:50:25',NULL);
+
+/*Table structure for table `tb_pageabout` */
+
+DROP TABLE IF EXISTS `tb_pageabout`;
+
+CREATE TABLE `tb_pageabout` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `h1` varchar(255) DEFAULT NULL,
+  `isi1` varchar(255) DEFAULT NULL,
+  `h2` varchar(255) DEFAULT NULL,
+  `isi2` varchar(255) DEFAULT NULL,
+  `h3` varchar(255) DEFAULT NULL,
+  `isi3` varchar(255) DEFAULT NULL,
+  `h4` varchar(255) DEFAULT NULL,
+  `isi4` varchar(255) DEFAULT NULL,
+  `gambar` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tb_pageabout` */
+
+insert  into `tb_pageabout`(`id`,`h1`,`isi1`,`h2`,`isi2`,`h3`,`isi3`,`h4`,`isi4`,`gambar`,`updated_at`,`created_at`) values (1,'Selamat datang di Toko Buah dan Sayuran ?','Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia volupta','Kami Terpecaya','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','Kami Professional','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','Kami Merespon Cepat','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','about-img.jpg','2020-12-02 13:25:08',NULL);
 
 /*Table structure for table `tb_slider` */
 

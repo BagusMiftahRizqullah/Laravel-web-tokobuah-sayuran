@@ -13,10 +13,12 @@
                     <div id="subPages" class="collapse ">
                         <ul class="nav">
                             <li><a href="/pagehome" class="active">Home</a></li>
+                            <li><a href="/pageabout" class="">About</a></li>
                           
                         </ul>
                     </div>
                 </li>
+                <li><a href="adminconfig" class=""><i class="lnr lnr-cog"></i> <span>Admin Konfigurasi</span></a></li>
             </ul>
         </nav>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\logo;
+use App\Models\pageabout;
 use App\Models\about;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class AboutController extends Controller
      */
     public function index()
     {
+        $pageabout = pageabout::all();
         $logo = logo::all();
-        return view('about.index', compact('logo'));
+        return view('about.index', compact('logo', 'pageabout'));
     }
 
     /**
